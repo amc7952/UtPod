@@ -72,6 +72,14 @@ void UtPod::showSongList(){
     }
 }
 
+void UtPod::clearMemory(){
+    while (songs!=NULL){
+        SongNode *temp = songs;
+        songs = songs->next;
+        delete temp;
+    }
+}
+
 int UtPod::getRemainingMemory(){
     SongNode *temp = songs;
     int remainingMemory = memSize;
@@ -84,5 +92,10 @@ int UtPod::getRemainingMemory(){
 }
 
 UtPod::~UtPod(){
+    while (songs!=NULL){
+        SongNode *temp = songs;
+        songs = songs->next;
+        delete temp;
+    }
     cout<< "\nGoodbye World" << endl;
 }

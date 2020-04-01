@@ -17,24 +17,16 @@ class Song {
 
     public:
     //Constructor
-    Song(){
-        Artist = "";
-        Title = "";
-        Size = 0;
-    }
+    Song();
+    Song(string artist, string title, int size);
 
-    Song(string artist, string title, int size){
-        Artist = artist;
-        Title = title;
-        Size = size;
-    };
+    string getArtist() const;
+    string getTitle() const;
+    int getSize() const;
 
-    string getArtist() const
-    {return Artist;}
-    string getTitle() const
-    {return Title;}
-    int getSize() const
-    {return Size;}
+    bool operator ==(Song s1);
+    bool operator >(Song s1);
+    bool operator <(Song s1);
 
 
     ~Song(){
