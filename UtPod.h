@@ -41,9 +41,9 @@ public:
 
      precondition: s is a valid Song
 
-     input parms -
+     input parms - UtPod has been initialized.
 
-     output parms -
+     output parms - Song added to the front of a linked list.
     */
 
     int addSong(Song const &s);
@@ -56,9 +56,9 @@ public:
          o returns -2 if nothing is removed
 
 
-       input parms -
+       input parms - At least one song is present in the UtPod.
 
-       output parms -
+       output parms - If matching song found, removed from the linked list.
     */
 
     int removeSong(Song const &s);
@@ -68,9 +68,9 @@ public:
      *  shuffles the songs into random order
         o will do nothing if there are less than two songs in the current list
 
-       input parms -
+       input parms - More than one song present in the UtPod.
 
-       output parms -
+       output parms - Shuffled songs.
     */
 
     void shuffle();
@@ -94,7 +94,7 @@ public:
 
        input parms -
 
-       output parms -
+       output parms - Ordered ascending.
     */
 
     void sortSongList();
@@ -105,7 +105,7 @@ public:
 
        input parms -
 
-       output parms -
+       output parms - No songs present in UtPod. Songs points to NULL.
     */
     void clearMemory();
 

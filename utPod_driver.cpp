@@ -1,7 +1,3 @@
-//
-// Created by Austin~ on 3/31/2020.
-//
-
 /* utPod_driver.cpp
 Demo Driver for the UtPod.
 
@@ -20,23 +16,22 @@ You will want to do more complete testing.
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
     UtPod t;
 
-    Song s1("Beatles", "Hey Jude", 4);
+    Song s1("Beatles", "Hey Jude1", 4);
     int result = t.addSong(s1);
     cout << "result = " << result << endl;
 
     t.showSongList();
 
-    Song s2("Beatles", "Hey Jude", 33);
+    Song s2("Beatles", "Hey Jude2", 5);
     result = t.addSong(s2);
     cout << "result = " << result << endl;
 
     t.showSongList();
 
-    Song s3("ABBA", "Dancing Queen", 6);
+    Song s3("Beatles", "Hey Jude3", 6);
     result = t.addSong(s3);
     cout << "result = " << result << endl;
 
@@ -44,15 +39,37 @@ int main(int argc, char *argv[])
     result = t.addSong(s4);
     cout << "result = " << result << endl;
 
-    Song s5("ABBA", "Mamma Mia", 241);
+    Song s5("Beatles", "Hey Jude5", 241);
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
 
     t.showSongList();
 
-    t.sortSongList();
-    cout << endl;
+    result = t.removeSong(s2);
+    cout << "delete result = " << result << endl;
+
+    result = t.removeSong(s3);
+    cout << "delete result = " << result << endl;
 
     t.showSongList();
+
+    result = t.removeSong(s1);
+    cout << "delete result = " << result << endl;
+
+    result = t.removeSong(s5);
+    cout << "delete result = " << result << endl;
+
+    result = t.removeSong(s4);
+    cout << "delete result = " << result << endl;
+
+
+    t.showSongList();
+
+    result = t.addSong(s5);
+    cout << "add result = " << result << endl;
+
+    t.showSongList();
+    cout << "memory = " << t.getRemainingMemory() << endl;
+
 
 }
