@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     t.showSongList();
 
-    Song s3("Beatles", "Hey Jude3", 6);
+    Song s3("ABBA", "Dancing Queen", 6);
     result = t.addSong(s3);
     cout << "result = " << result << endl;
 
@@ -44,42 +44,15 @@ int main(int argc, char *argv[])
     result = t.addSong(s4);
     cout << "result = " << result << endl;
 
-    Song s5("Beatles", "Hey Jude5", 241);
+    Song s5("ABBA", "Mamma Mia", 241);
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
 
     t.showSongList();
 
-    result = t.removeSong(s2);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s3);
-    cout << "delete result = " << result << endl;
+    t.sortSongList();
+    cout << endl;
 
     t.showSongList();
 
-    t.clearMemory();
-
-    result = t.removeSong(s1);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s5);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s4);
-    cout << "delete result = " << result << endl;
-
-
-
-    t.showSongList();
-
-    result = t.addSong(s5);
-    cout << "add result = " << result << endl;
-
-    t.showSongList();
-    cout << "memory = " << t.getRemainingMemory() << endl;
-
-    if(s1<s2){
-        cout << "yay";
-    }
 }

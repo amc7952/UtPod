@@ -72,6 +72,24 @@ void UtPod::showSongList(){
     }
 }
 
+void UtPod::sortSongList(){
+    int sort = 1;
+    while(sort==1){
+        sort=0;
+        SongNode *p = songs;
+        while(p->next!=NULL){
+            if((p->s)>(p->next->s)) {
+                cout << "trying to sort";
+                Song temp = p->next->s;
+                p->next->s = p->s;
+                p->s = temp;
+                sort=1;
+            }
+            p = p->next;
+        }
+    }
+}
+
 void UtPod::clearMemory(){
     while (songs!=NULL){
         SongNode *temp = songs;
