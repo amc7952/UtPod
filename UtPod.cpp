@@ -53,9 +53,11 @@ int UtPod::removeSong(Song const &s){
         if((artist==_artist)&&(title==_title)&&(size==_size)){
             if(temp==songs){
                 songs=songs->next;
+                delete temp;
             }
             else{
                 prevTemp->next = temp->next;
+                delete temp;
             }
             return SUCCESS;
         }
