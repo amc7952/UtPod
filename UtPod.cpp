@@ -109,6 +109,9 @@ void UtPod::showSongList(){
 }
 
 void UtPod::sortSongList(){
+    if(songs==NULL){
+        return;
+    }
     int sort = 1;
     //Continue sorting until until the list has been fully traversed with no swaps.
     while(sort==1){
