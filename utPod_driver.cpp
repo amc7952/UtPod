@@ -16,60 +16,41 @@ You will want to do more complete testing.
 
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
     UtPod t;
 
     Song s1("Beatles", "Hey Jude1", 4);
     int result = t.addSong(s1);
     cout << "result = " << result << endl;
 
-    t.showSongList();
+    Song s2("ABBA", "Mamma Mia", 200);
 
-    Song s2("Beatles", "Hey Jude2", 5);
-    result = t.addSong(s2);
-    cout << "result = " << result << endl;
+    Song s3("Smash Mouth", "All Star", 42);
 
-    t.showSongList();
+    t.addSong(s2);
+    t.addSong(s1);
+    t.addSong(s2);
+    t.addSong(s1);
+    cout << t.addSong(s2) << endl;
+    t.addSong(s1);
 
-    Song s3("Beatles", "Hey Jude3", 6);
-    result = t.addSong(s3);
-    cout << "result = " << result << endl;
-
-    Song s4("Beatles", "Hey Jude4", 7);
-    result = t.addSong(s4);
-    cout << "result = " << result << endl;
-
-    Song s5("Beatles", "Hey Jude5", 241);
-    result = t.addSong(s5);
-    cout << "add result = " << result << endl;
+    cout << "Total Memory = " << t.getTotalMemory() << endl;
+    cout << "Remaining Memory = " << t.getRemainingMemory() << endl << endl;
 
     t.showSongList();
-
-    result = t.removeSong(s2);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s3);
-    cout << "delete result = " << result << endl;
-
+    t.removeSong(s1);
     t.showSongList();
 
-    result = t.removeSong(s1);
-    cout << "delete result = " << result << endl;
+    t.addSong(s3);
 
-    result = t.removeSong(s5);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s4);
-    cout << "delete result = " << result << endl;
-
-
+    t.shuffle();
     t.showSongList();
-
-    result = t.addSong(s5);
-    cout << "add result = " << result << endl;
-
+    t.shuffle();
     t.showSongList();
-    cout << "memory = " << t.getRemainingMemory() << endl;
-
+    t.shuffle();
+    t.showSongList();
+    t.sortSongList();
+    t.showSongList();
 
 }
